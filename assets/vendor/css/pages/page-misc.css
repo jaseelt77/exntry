@@ -15,3 +15,10 @@
   min-height: calc(100vh - 1.625rem * 2);
   text-align: center;
 }
+
+@media (min-width: 1200px) {
+  .navbar-expand-xl .navbar-nav .dropdown-notification {
+    position: absolute;
+    width: 20rem;
+  }
+}
