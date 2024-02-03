@@ -1,0 +1,47 @@
+.receipts{
+    .card{
+        padding: 10px 0;
+        h6{
+            color: #B0BFD6;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        img{
+            margin: 0 auto;
+            margin-bottom: 5px;
+        }
+        .receipts-add{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            .receipts_one{
+                i{
+                    color: #FF4034;
+                    font-size: 25px;
+                }
+            }
+            .receipts_two{
+                i{
+                    color: #4642F8;
+                    font-size: 25px;
+                }
+            }
+           
+        }
+        .receipts-arrow{
+            .receipts_one{
+                i{color: #FF4034; font-size: 25px;}
+                    
+            }
+            
+        }
+        a:hover{
+            color: #FF4034;
+        }
+        &:hover{
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            //box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        }
+    }
+}
