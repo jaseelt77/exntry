@@ -17990,6 +17990,11 @@ button.list-group-item-gray.active {
           box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
+@media (min-width: 1200px) {
+  .navbar-expand-xl .navbar-nav .dropdown-notification {
+    width: 18rem;
+  }
+}
 body {
   text-rendering: optimizeLegibility;
   font-smoothing: antialiased;
