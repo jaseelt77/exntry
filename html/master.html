@@ -681,26 +681,7 @@
               aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <!-- <div class="row">
-              <div class="col mb-3">
-                <label for="nameExLarge" class="form-label">Name</label>
-                <input type="text" id="nameExLarge" class="form-control" placeholder="Enter Name" />
-              </div>
-            </div> -->
-            <!-- <div class="row g-2">
-              <div class="col mb-0">
-                <label for="emailExLarge" class="form-label">Email</label>
-                <input
-                  type="email"
-                  id="emailExLarge"
-                  class="form-control"
-                  placeholder="xxxx@xxx.xx" />
-              </div>
-              <div class="col mb-0">
-                <label for="dobExLarge" class="form-label">DOB</label>
-                <input type="date" id="dobExLarge" class="form-control" />
-              </div>
-            </div> -->
+           
             <div class="row">
               <div class="col-3">
                 <label for="smallSelect" class="form-label">TXN Date</label>
@@ -782,6 +763,15 @@
               </div>
             </div>
 
+            <div class="ext-textarea">
+              <form>
+                <div class="mb-3">
+                    <label for="tr-note" class="form-label">Note:</label>
+                    <textarea class="form-control" id="tr-note" rows="1"></textarea>
+                </div>
+            </form>
+            </div>
+
             <div class="container mt-5">
               <div class="row align-items-center">
                   <div class="col-md-auto">
@@ -800,10 +790,12 @@
                     <button type="button" class="btn btn-sm btn-primary">Add Extra Charges</button>
                   </div>
                   <div class="col-md-auto mt-md-0 mt-3">
-                    <button type="button" class="btn btn-sm rounded-pill btn-outline-secondary"><span class="tf-icons bx bx-plus"></span>QUICK MS</button>
+                    <button type="button" data-bs-toggle="modal"
+                    data-bs-target="#exLargeModals"  class="btn btn-sm rounded-pill btn-outline-danger"><span class="tf-icons bx bx-plus"></span>QUICK MS</button>
                   </div>
                   <div class="col-md-auto mt-md-0 mt-3">
-                    <button type="button" class="btn btn-sm rounded-pill btn-outline-primary"><span class="tf-icons bx bx-plus"></span>QUICK MS</button>
+                    <button type="button" data-bs-toggle="modal"
+                    data-bs-target="#exLargeModal" class="btn btn-sm rounded-pill btn-outline-primary"><span class="tf-icons bx bx-plus"></span>QUICK AS</button>
                   </div>
               </div>
           </div>
@@ -811,13 +803,148 @@
 
           </div>
           <div class="modal-footer">
-           
             <button type="button" class="btn btn-info">SAVE</button>
           </div>
         </div>
       </div>
     </div>
   <!--- large modal Receipts end -->
+
+
+   <!--- large modal Receipts start -->
+   <div class="modal fade" id="exLargeModals" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="receiptsModals">ADD INVOICE</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+    
+          <div class="row">
+            <div class="col-3">
+              <label for="smallSelect" class="form-label">TXN Date</label>
+              <input type="date" id="dobExLarge" class="form-select form-select-sm"  />
+            </div>
+            <div class="col-3">
+              <label for="staffref" class="form-label">CUSTOMER</label>
+              <input id="staffref" class="form-control form-control-sm" type="text" placeholder="NONE">
+            </div>
+            <div class="col-3">
+              <div>
+                <label for="cashSelect" class="form-label">CHILD A/C  </label>
+                <input id="childac" class="form-control form-control-sm disabled" type="text" placeholder="">
+              </div>
+            </div>
+            <div class="col-3 text-center"> 
+              <label for="bankSelect" class="form-label">STAFF REF :</label> 
+              <input id="childac" class="form-control form-control-sm" type="text" placeholder="">
+            </div>
+          </div>
+          <div class="billing-data mt-3">
+            <div class="table-responsive">
+              <table class="table table-bordered table-sm">
+                  <thead>
+                      <tr class="table-secondary text-center"> 
+                          <th scope="col">#</th>
+                          <th scope="col">SERVICE</th>
+                          <th scope="col">PPT NO.</th>
+                          <th scope="col">SUPPLIER</th>
+                          <th scope="col">PAX NAME</th>
+                          <th scope="col">AGENT</th>
+                          <th scope="col">INCOME</th>
+                          <th scope="col">SUPP. TOT.</th>
+                          <th scope="col">AGNT TOT.</th>
+                          <th scope="col">NET TOT.</th>
+                          <th scope="col">ACTIONS</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td colspan="6" class="text-end"></td>
+                  </tr>
+                      
+                      <tr class="text-center">
+                        <th colspan="8"></th>
+                        <th scope="col">TOTAL</th>
+                        <th scope="col">0.00</th>
+                        <th></th>
+                        
+                      </tr>
+                      <tr class="text-center">
+                        
+                        <th colspan="8"></th>
+                        <th scope="col">TOTAL</th>
+                        <th scope="col" class="table-active">0</th>
+                        <th></th>
+                        
+                      </tr>
+                      <tr class="text-center">
+                        
+                        <th colspan="8"></th>
+                        <th scope="col">NET TOTAL</th>
+                        <th scope="col">0.00</th>
+                        <th></th>
+                        
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="container mt-5">
+            <div class="row align-items-center">
+                <div class="col-md-auto">
+                    <label for="related" class="col-form-label form-control-sm">RELATED :</label>
+                </div>
+                <div class="col-md-auto">
+                    <input type="text" class="form-control form-control-sm" id="related">
+                </div>
+                <div class="col-md-auto">
+                    <label for="add-discount" class="col-form-label form-control-sm">DUE DATE:</label>
+                </div>
+                <div class="col-md-auto">
+                  <input type="date" id="duedate" class="form-select form-select-sm" id="duedate">
+                </div>
+                <div class="col-md-auto mt-md-0 mt-3">
+                  <label for="add-discount" class="col-form-label form-control-sm">TXN TYPE</label>
+                </div>
+                <div class="col-md-auto mt-md-0 mt-3">
+                  <select id="txnSelect" class="form-select form-select-sm">
+                    <option value="1">BC</option>
+                    <option value="2">BB</option>
+                  </select>
+                </div>
+                <div class="col-md-auto mt-md-0 mt-3">
+                  <button type="button" data-bs-toggle="modal"
+                  data-bs-target="#exLargeModal" class="btn btn-sm rounded-pill btn-primary"><span class="tf-icons bx bx-plus"></span>Add Service</button>
+                  <button type="button" data-bs-toggle="modal"
+                  data-bs-target="#exLargeModal" class="btn btn-sm rounded-pill btn-danger mx-2"><span class="tf-icons bx bx-plus"></span>Finl Save</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ext-textarea mt-4">
+          <div class="row">
+            <div class="col-md-9 mb-3">
+                <textarea class="form-control" id="tr-note" rows="1" placeholder="Note"></textarea>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn btn-info"><span class="tf-icons bx bx-plus me-1"></span> QUICK RECEIPT</button>
+            </div>
+          </div>
+        </div>
+
+        </div>
+       
+      </div>
+    </div>
+  </div>
+<!--- large modals ms  end -->
 
 
 
