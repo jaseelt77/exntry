@@ -13,7 +13,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Masters - Exntry </title>
+    <title>Receipts - Exntry </title>
 
     <meta name="description" content="" />
 
@@ -76,7 +76,7 @@
                 <div data-i18n="Dashboards">Dashboards</div>
               </a>
             </li>
-            <li class="menu-item active">
+            <li class="menu-item">
               <a href="master.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-shield-quarter"></i>
                 <div data-i18n="Dashboards">Master</div>
@@ -84,7 +84,7 @@
             </li>
            
             <!-- Dashboards -->
-            <li class="menu-item">
+            <li class="menu-item active open">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class='menu-icon tf-icons bx bx-wallet-alt'></i>
                 <div data-i18n="Dashboards">Transactions</div>
@@ -424,10 +424,7 @@
                         <h6>RECEIPTS</h4>
                             <div class="receipts-add">
                                 <div class="receipts_one">
-                                    <a href="#" 
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#exLargeModal"
-                                    ><i class='bx bx-plus-circle'></i></a>
+                                    <a href="#"><i class='bx bx-plus-circle'></i></a>
                                 </div>
                                 <div class="receipts_two">
                                     <a href="#"><i class='bx bxs-edit'></i></a>
@@ -668,158 +665,7 @@
     </div>
     <!-- / Layout wrapper -->
 
-    <!--- large modal Receipts start -->
-    <div class="modal fade" id="exLargeModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="receiptsModal">ADD RECEIPTS</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <!-- <div class="row">
-              <div class="col mb-3">
-                <label for="nameExLarge" class="form-label">Name</label>
-                <input type="text" id="nameExLarge" class="form-control" placeholder="Enter Name" />
-              </div>
-            </div> -->
-            <!-- <div class="row g-2">
-              <div class="col mb-0">
-                <label for="emailExLarge" class="form-label">Email</label>
-                <input
-                  type="email"
-                  id="emailExLarge"
-                  class="form-control"
-                  placeholder="xxxx@xxx.xx" />
-              </div>
-              <div class="col mb-0">
-                <label for="dobExLarge" class="form-label">DOB</label>
-                <input type="date" id="dobExLarge" class="form-control" />
-              </div>
-            </div> -->
-            <div class="row">
-              <div class="col-3">
-                <label for="smallSelect" class="form-label">TXN Date</label>
-                <input type="date" id="dobExLarge" class="form-select form-select-sm"  />
-              </div>
-              <div class="col-3">
-                <label for="staffref" class="form-label">STAFF REF</label>
-                <input id="staffref" class="form-control form-control-sm" type="text" placeholder="NONE">
-              </div>
-              <div class="col-3">
-                <div>
-                  <label for="cashSelect" class="form-label">CASH/BANKS </label>
-                  <select id="cashSelect" class="form-select form-select-sm">
-                    <option>select</option>
-                    <option value="1">CASH/BANKS </option>
-                    <option value="2">SHUKOOR</option>
-                    <option value="3">SBI</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-3 text-center"> 
-                <label for="bankSelect" class="form-label">-BALANCE-</label> 
-                <h4>$ 200</h4> 
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-6 col-sm-3">
-                <label for="smallSelect" class="form-label">CONTROL</label>
-                <select id="cashSelect" class="form-select form-select-sm">
-            
-                  <option value="1">Control </option>
-                  <option value="2">Supplier</option>
-                  <option value="3">Agents</option>
-                  <option value="3">General Ledger</option>
-                </select>
-              </div>
-              <div class="col-6 col-sm-6">
-                <label for="mainledger" class="form-label">MAIN LEDGER</label>
-                <input id="staffref" class="form-control form-control-sm" type="text" placeholder="NONE">
-              </div>
-              <div class="col-6 col-sm-3">
-                <div class="mt-4">
-                  <label for="cashSelect" class="form-label"></label>
-                  <button type="submit" name="submitButton" class="btn btn-sm btn-dark"><span class="tf-icons bx bx-plus me-1"></span> ADD TRANSACTION</button>
-                
-                </div>
-              </div>
-           
-            </div>
-
-            <div class="billing-data mt-3">
-              <div class="table-responsive">
-                <table class="table table-bordered table-sm">
-                    <thead>
-                        <tr class="table-secondary text-center"> 
-                            <th scope="col">SI NO.</th>
-                            <th scope="col">ACCOUNT HEAD</th>
-                            <th scope="col">REF.</th>
-                            <th scope="col">#</th>
-                            <th scope="col">AMOUNT</th>
-                            <th scope="col"><i class="bx bx-cog me-2"></i></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th colspan="6" class="text-end"></th>
-                    </tr>
-                        
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th  scope="col">TOTAL</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div class="container mt-5">
-              <div class="row align-items-center">
-                  <div class="col-md-auto">
-                      <label for="related" class="col-form-label form-control-sm">RELATED :</label>
-                  </div>
-                  <div class="col-md-auto">
-                      <input type="text" class="form-control form-control-sm" id="related">
-                  </div>
-                  <div class="col-md-auto">
-                      <label for="add-discount" class="col-form-label form-control-sm">ADD DISCOUNT:</label>
-                  </div>
-                  <div class="col-md-auto">
-                      <input type="text" class="form-control form-control-sm" id="add-discount">
-                  </div>
-                  <div class="col-md-auto mt-md-0 mt-3">
-                    <button type="button" class="btn btn-sm btn-primary">Add Extra Charges</button>
-                  </div>
-                  <div class="col-md-auto mt-md-0 mt-3">
-                    <button type="button" class="btn btn-sm rounded-pill btn-outline-secondary"><span class="tf-icons bx bx-plus"></span>QUICK MS</button>
-                  </div>
-                  <div class="col-md-auto mt-md-0 mt-3">
-                    <button type="button" class="btn btn-sm rounded-pill btn-outline-primary"><span class="tf-icons bx bx-plus"></span>QUICK MS</button>
-                  </div>
-              </div>
-          </div>
-          
-
-          </div>
-          <div class="modal-footer">
-           
-            <button type="button" class="btn btn-info">SAVE</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  <!--- large modal Receipts end -->
-
-
+  
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -838,9 +684,6 @@
     <!-- Main JS -->
     <script src="../assets/js/main.js"></script>
 
-
-      <!-- Page JS -->
-      <script src="../assets/js/ui-modals.js"></script>
     <!-- Page JS -->
     <script src="../assets/js/dashboards-analytics.js"></script>
 

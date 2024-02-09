@@ -46,6 +46,16 @@
     }
 }
 
+.modal{
+    .modal-header {
+        background-color: #2b3643 !important;
+        color: #FFF !important;
+        .modal-title {
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+    }
+}
 
 @media (min-width: 1200px){
 .navbar-expand-xl .navbar-nav .dropdown-notification {
