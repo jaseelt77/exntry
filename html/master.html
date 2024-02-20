@@ -430,7 +430,10 @@
                                     ><i class='bx bx-plus-circle'></i></a>
                                 </div>
                                 <div class="receipts_two">
-                                    <a href="#"><i class='bx bxs-edit'></i></a>
+                                    <a href="#" 
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#ReceiptModals"
+                                    ><i class='bx bxs-edit'></i></a>
                                 </div>
                             </div>
                     </div>
@@ -725,7 +728,8 @@
               <div class="col-6 col-sm-3">
                 <div class="mt-4">
                   <label for="cashSelect" class="form-label"></label>
-                  <button type="submit" name="submitButton" class="btn btn-sm btn-dark"><span class="tf-icons bx bx-plus me-1"></span> ADD TRANSACTION</button>
+                  <button type="submit" name="submitButton" class="btn btn-sm btn-dark" data-bs-toggle="modal"
+                  data-bs-target="#TransactionModalToggle"><span class="tf-icons bx bx-plus me-1"></span> ADD TRANSACTION</button>
                 
                 </div>
               </div>
@@ -787,7 +791,7 @@
                       <input type="text" class="form-control form-control-sm" id="add-discount">
                   </div>
                   <div class="col-md-auto mt-md-0 mt-3">
-                    <button type="button" class="btn btn-sm btn-primary">Add Extra Charges</button>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#TransactionModalToggle" class="btn btn-sm btn-primary">Add Extra Charges</button>
                   </div>
                   <div class="col-md-auto mt-md-0 mt-3">
                     <button type="button" data-bs-toggle="modal"
@@ -795,7 +799,8 @@
                   </div>
                   <div class="col-md-auto mt-md-0 mt-3">
                     <button type="button" data-bs-toggle="modal"
-                    data-bs-target="#exLargeModal" class="btn btn-sm rounded-pill btn-outline-primary"><span class="tf-icons bx bx-plus"></span>QUICK AS</button>
+                    data-bs-target="#exLargeModals" class="btn btn-sm rounded-pill btn-primary" class="btn btn-sm rounded-pill btn-outline-primary"><span class="tf-icons bx bx-plus"></span> QUICK AS</button>
+                  
                   </div>
               </div>
           </div>
@@ -803,7 +808,7 @@
 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-info">SAVE</button>
+            <button type="button" class="btn btn-info">FINAL SAVE</button>
           </div>
         </div>
       </div>
@@ -920,10 +925,8 @@
                   </select>
                 </div>
                 <div class="col-md-auto mt-md-0 mt-3">
-                  <button type="button" data-bs-toggle="modal"
-                  data-bs-target="#exLargeModal" class="btn btn-sm rounded-pill btn-primary"><span class="tf-icons bx bx-plus"></span>Add Service</button>
-                  <button type="button" data-bs-toggle="modal"
-                  data-bs-target="#exLargeModal" class="btn btn-sm rounded-pill btn-danger mx-2"><span class="tf-icons bx bx-plus"></span>Finl Save</button>
+                  <button type="button"data-bs-toggle="modal" data-bs-target="#TransactionModalToggle" class="btn btn-sm rounded-pill btn-primary"><span class="tf-icons bx bx-plus"></span>Add Service</button>
+                  <button type="button"  class="btn btn-sm rounded-pill btn-danger mx-2"><span class="tf-icons bx bx-plus"></span>Final Save</button>
                 </div>
             </div>
         </div>
@@ -934,7 +937,9 @@
                 <textarea class="form-control" id="tr-note" rows="1" placeholder="Note"></textarea>
             </div>
             <div class="col-md-3">
-              <button type="button" class="btn btn-info"><span class="tf-icons bx bx-plus me-1"></span> QUICK RECEIPT</button>
+              <button type="button" data-bs-toggle="modal"
+              data-bs-target="#exLargeModal" class="btn btn-sm rounded-pill btn-primary" class="btn btn-info"><span class="tf-icons bx bx-plus me-1"></span> QUICK RECEIPT</button>
+             
             </div>
           </div>
         </div>
@@ -947,8 +952,477 @@
 <!--- large modals ms  end -->
 
 
+<!---RECIPTS START MODAL-->
+ <!--- large modal Receipts start -->
+ <div class="modal fade" id="exLargeModal" tabindex="-1" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="receiptsModal">ADD RECEIPTS</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       
+        <div class="row">
+          <div class="col-3">
+            <label for="smallSelect" class="form-label">TXN Date</label>
+            <input type="date" id="dobExLarge" class="form-select form-select-sm"  />
+          </div>
+          <div class="col-3">
+            <label for="staffref" class="form-label">STAFF REF</label>
+            <input id="staffref" class="form-control form-control-sm" type="text" placeholder="NONE">
+          </div>
+          <div class="col-3">
+            <div>
+              <label for="cashSelect" class="form-label">CASH/BANKS </label>
+              <select id="cashSelect" class="form-select form-select-sm">
+                <option>select</option>
+                <option value="1">CASH/BANKS </option>
+                <option value="2">SHUKOOR</option>
+                <option value="3">SBI</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-3 text-center"> 
+            <label for="bankSelect" class="form-label">-BALANCE-</label> 
+            <h4>$ 200</h4> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 col-sm-3">
+            <label for="smallSelect" class="form-label">CONTROL</label>
+            <select id="cashSelect" class="form-select form-select-sm">
+        
+              <option value="1">Control </option>
+              <option value="2">Supplier</option>
+              <option value="3">Agents</option>
+              <option value="3">General Ledger</option>
+            </select>
+          </div>
+          <div class="col-6 col-sm-6">
+            <label for="mainledger" class="form-label">MAIN LEDGER</label>
+            <input id="staffref" class="form-control form-control-sm" type="text" placeholder="NONE">
+          </div>
+          <div class="col-6 col-sm-3">
+            <div class="mt-4">
+              <label for="cashSelect" class="form-label"></label>
+              <button type="submit" name="submitButton" class="btn btn-sm btn-dark" data-bs-toggle="modal"
+              data-bs-target="#TransactionModalToggle"><span class="tf-icons bx bx-plus me-1"></span> ADD TRANSACTION</button>
+            
+            </div>
+          </div>
+       
+        </div>
 
-    <!-- Core JS -->
+        <div class="billing-data mt-3">
+          <div class="table-responsive">
+            <table class="table table-bordered table-sm">
+                <thead>
+                    <tr class="table-secondary text-center"> 
+                        <th scope="col">SI NO.</th>
+                        <th scope="col">ACCOUNT HEAD</th>
+                        <th scope="col">REF.</th>
+                        <th scope="col">#</th>
+                        <th scope="col">AMOUNT</th>
+                        <th scope="col"><i class="bx bx-cog me-2"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th colspan="6" class="text-end"></th>
+                </tr>
+                    
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th  scope="col">TOTAL</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="ext-textarea">
+          <form>
+            <div class="mb-3">
+                <label for="tr-note" class="form-label">Note:</label>
+                <textarea class="form-control" id="tr-note" rows="1"></textarea>
+            </div>
+        </form>
+        </div>
+
+        <div class="container mt-5">
+          <div class="row align-items-center">
+              <div class="col-md-auto">
+                  <label for="related" class="col-form-label form-control-sm">RELATED :</label>
+              </div>
+              <div class="col-md-auto">
+                  <input type="text" class="form-control form-control-sm" id="related">
+              </div>
+              <div class="col-md-auto">
+                  <label for="add-discount" class="col-form-label form-control-sm">ADD DISCOUNT:</label>
+              </div>
+              <div class="col-md-auto">
+                  <input type="text" class="form-control form-control-sm" id="add-discount">
+              </div>
+              <div class="col-md-auto mt-md-0 mt-3">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#TransactionModalToggle" class="btn btn-sm btn-primary">Add Extra Charges</button>
+              </div>
+              <div class="col-md-auto mt-md-0 mt-3">
+                <button type="button" data-bs-toggle="modal"
+                data-bs-target="#exLargeModals"  class="btn btn-sm rounded-pill btn-outline-danger"><span class="tf-icons bx bx-plus"></span>QUICK MS</button>
+              </div>
+              <div class="col-md-auto mt-md-0 mt-3">
+                <button type="button" data-bs-toggle="modal"
+                data-bs-target="#exLargeModals" class="btn btn-sm rounded-pill btn-primary" class="btn btn-sm rounded-pill btn-outline-primary"><span class="tf-icons bx bx-plus"></span> QUICK AS</button>
+              
+              </div>
+          </div>
+      </div>
+      
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info">FINAL SAVE</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--- large modal Receipts end -->
+
+
+<!--- large modal Receipts start -->
+<div class="modal fade" id="ReceiptModals" tabindex="-1" aria-hidden="true"  data-backdrop="static">
+<div class="modal-dialog modal-xl" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="receiptsModals">RECEIPTS</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+
+     
+      <div class="billing-data mt-3">
+        <div class="table-responsive">
+          
+      <div class="container">
+       
+        <div class="row" style="width: 100%;">
+          <div class="col-4 col-md-2">
+            <label for="txnq" class="col-form-label form-control-sm">TXN #</label>
+            <input type="text" class="form-control form-control-sm" id="txn">
+          </div>
+          <div class="col-4 col-md-2">
+            <label for="add-discount" class="col-form-label form-control-sm">LEDGER:</label>
+            <input type="text" class="form-control form-control-sm" id="ledger">
+          </div>
+          <div class="col-4 col-md-3">
+            <label for="add-discount" class="col-form-label form-control-sm">PPT #</label>
+            <input type="text" class="form-control form-control-sm" id="ppt">
+          </div>
+          <div class="col-4 col-md-2"> 
+            <label for="bankSelect" class="form-label">DUE FROM</label> 
+              <input type="date" id="duedate" class="form-select form-select-sm" id="duedate1">
+            </div>
+          <div class="col-4 col-md-2"> 
+            <label for="bankSelect" class="form-label">DUE To</label> 
+              <input type="date" id="duedate2" class="form-select form-select-sm" id="duedate2">
+            </div>
+            <div class="col-4 col-md-1 mt-4">
+              <button type="button" class="btn btn-info">SEARCH</button>
+            </div>
+        </div>
+          <div class="card mt-4">
+            <div class="table-responsive text-nowrap">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>TXN. NO.</th>
+                    <th>TXN. DATE.</th>
+                    <th>CASH/BANK.</th>
+                    <th>LEDGER</th>
+                    <th>CHILD A/C</th>
+                    <th>AMOUNT.</th>
+                    <th>GENERATED BY.</th>
+                    <th>ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                  <tr>
+                    <td>
+                      <span class="fw-medium">1</span>
+                    </td>
+                    <td>RC-10-24F192004</td>
+                    <td>19-02-2024</td>
+                    <td> SBI</td>
+                    <td>NH HOLIDAYS</td>
+                    <td>NH HOLIDAYS</td>
+                    <td>3000</td>
+                    <td>ABDUL SHUKOOR</td>
+                    <td>
+                      <div class="dropdown">
+                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                          >
+                        
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class='bx bx-selection'></i> GL Code</a
+                          >
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class='bx bx-printer'></i> Print</a
+                          >
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class="bx bx-trash me-1"></i> Delete</a
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                 
+                  <tr>
+                    <td>
+                      <span class="fw-medium">2</span>
+                    </td>
+                    <td>RC-10-24F192004</td>
+                    <td>19-02-2024</td>
+                    <td>
+                    
+                      SBI
+                    </td>
+                    <td>NH HOLIDAYS</td>
+                    <td>NH HOLIDAYS</td>
+                    <td>3000</td>
+                    <td>ABDUL SHUKOOR</td>
+                    <td>
+                      <div class="dropdown">
+                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                          >
+                        
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class='bx bx-selection'></i> GL Code</a
+                          >
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class='bx bx-printer'></i> Print</a
+                          >
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class="bx bx-trash me-1"></i> Delete</a
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                 
+                  <tr>
+                    <td>
+                      <span class="fw-medium">3</span>
+                    </td>
+                    <td>RC-10-24F192004</td>
+                    <td>19-02-2024</td>
+                    <td>
+                    
+                      SBI
+                    </td>
+                    <td>NH HOLIDAYS</td>
+                    <td>NH HOLIDAYS</td>
+                    <td>3000</td>
+                    <td>ABDUL SHUKOOR</td>
+                    <td>
+                      <div class="dropdown">
+                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                          >
+                        
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class='bx bx-selection'></i> GL Code</a
+                          >
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class='bx bx-printer'></i> Print</a
+                          >
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class="bx bx-trash me-1"></i> Delete</a
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                 
+                  <tr>
+                    <td>
+                      <span class="fw-medium">4</span>
+                    </td>
+                    <td>RC-10-24F192004</td>
+                    <td>19-02-2024</td>
+                    <td>
+                    
+                      SBI
+                    </td>
+                    <td>NH HOLIDAYS</td>
+                    <td>NH HOLIDAYS</td>
+                    <td>3000</td>
+                    <td>ABDUL SHUKOOR</td>
+                    <td>
+                      <div class="dropdown">
+                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#" 
+                          data-bs-toggle="modal"
+                          data-bs-target="#exLargeModal"
+                            ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                          >
+                        
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class='bx bx-selection'></i> GL Code</a
+                          >
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class='bx bx-printer'></i> Print</a
+                          >
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i class="bx bx-trash me-1"></i> Delete</a
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </div>
+          <table class="table table-bordered table-sm">
+              <thead>
+                  <tr class="table-secondary text-center"> 
+                      <th scope="col">#</th>
+                      <th scope="col">SERVICE</th>
+                      <th scope="col">PPT NO.</th>
+                      <th scope="col">SUPPLIER</th>
+                      <th scope="col">PAX NAME</th>
+                      <th scope="col">AGENT</th>
+                      <th scope="col">INCOME</th>
+                      <th scope="col">SUPP. TOT.</th>
+                      <th scope="col">AGNT TOT.</th>
+                      <th scope="col">NET TOT.</th>
+                      <th scope="col">ACTIONS</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="6" class="text-end"></td>
+              </tr>
+                  
+                  <tr class="text-center">
+                    <th></th>
+                    <th scope="col">TOTAL</th>
+                    <th scope="col">0.00</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>
+                      <td>
+                        <div class="dropdown">
+                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#" 
+                            data-bs-toggle="modal"
+                            data-bs-target="#exLargeModal"
+                              ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                            >
+                          
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              ><i class='bx bx-selection'></i> GL Code</a
+                            >
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              ><i class='bx bx-printer'></i> Print</a
+                            >
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              ><i class="bx bx-trash me-1"></i> Delete</a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </th>
+                    
+                  </tr>
+                  <tr class="text-center">
+                    
+                    <th colspan="8"></th>
+                    <th scope="col">TOTAL</th>
+                    <th scope="col" class="table-active">0</th>
+                    <th></th>
+                    
+                  </tr>
+                  <tr class="text-center">
+                    
+                    <th colspan="8"></th>
+                    <th scope="col">NET TOTAL</th>
+                    <th scope="col">0.00</th>
+                    <th></th>
+                    
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+
+  
+    </div>
+   
+  </div>
+</div>
+</div>
+<!---RECIPTS START MODAL END-->
+
+<!---small modal end-->
+    <div class="modal fade" id="TransactionModalToggle" aria-labelledby="modalToggleLabel" tabindex="-1" style="display: none" aria-hidden="true" role="dialog">
+              <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalToggleLabel">ADD TXN DETAILS</h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">PLEASE ADD LEDGER(EG:CUSTOMER) AND SELECT IT...
+
+                      </div>
+                    </div>
+              </div>
+    </div>
+
+<!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
 
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
